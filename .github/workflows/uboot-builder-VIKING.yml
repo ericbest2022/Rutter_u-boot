@@ -146,7 +146,7 @@ jobs:
       - name: Release Firmware
         uses: softprops/action-gh-release@master
         with:
-          tag_name: ${{env.WRT_AUTHOR}}-${{env.WRT_VER}}-${{env.WRT_DATE}}
+          tag_name: ${{env.WRT_AUTHOR}}-${{env.WRT_VER}}-${{env.WRT_DATE}}-VIKING
           files: ./wrt/upload/*.*
           body: |
             这是个平台固件包，内含多个设备！
