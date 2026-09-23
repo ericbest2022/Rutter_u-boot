@@ -92,49 +92,7 @@
 - luci-app-passwall
 - luci-proto-wireguard
 
----
 
-## SSH 连接 Action
-
-可以通过 ssh 连接到 Action 工作流来配置 `menuconfig` 。示例：
-```bash
-ssh XXXXXXXXXX@XXXXXX.XXX.io
-##然后按 Q ，继续输入指令
-cd openwrt
-make menuconfig
-cd ..
-touch continue
-```
-完成定制
-
----
-
-## 编译注意事项
-
-GitHub Actions 存储有限，大型软件包（如 sing-box 或 alist）建议使用预编译方式，而不是源码编译，即在编译过程中加入已经编译好现成软件包。否则你应该会碰到超长编译时间 + 超出 Action 储存。示例：
-
-```sh
-# 创建存储二进制文件的目录
-BIN_DIR="$GITHUB_WORKSPACE/openwrt/files/usr/bin"
-mkdir -p "$BIN_DIR"
-
-# -------- 下载并解压 xray-core ARM64 -------
-echo "Downloading xray-core..."
-curl -L -o xray.zip https://github.com/XTLS/Xray-core/releases/download/v25.10.15/Xray-linux-arm64-v8a.zip
-unzip -o xray.zip -d "$BIN_DIR"
-chmod +x "$BIN_DIR/xray"
-rm xray.zip
-
-# -------- 下载并解压 sing-box ARM64 -------
-echo "Downloading sing-box..."
-curl -L -o sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v1.12.12/sing-box-1.12.12-linux-arm64.tar.gz
-TMP_DIR=$(mktemp -d)
-tar -xzf sing-box.tar.gz -C "$TMP_DIR"
-mv "$TMP_DIR"/sing-box-1.12.12-linux-arm64/sing-box "$BIN_DIR"/sing-box
-chmod +x "$BIN_DIR/sing-box"
-rm -rf "$TMP_DIR"
-rm sing-box.tar.gz
-```
 
 ---
 
