@@ -113,7 +113,7 @@ jobs:
         id: tag
         run: |
           BUILD_TIME=$(date +"%Y%m%d-%H%M")
-          RELEASE_TAG="Uboot-${BUILD_TIME}"
+          RELEASE_TAG="Uboot-1988-${BUILD_TIME}"
           echo "release_tag=$RELEASE_TAG" >> $GITHUB_OUTPUT
 
           # 生成 release 信息
