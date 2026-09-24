@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2026 VIKINGYFY
 
-name: 798x-UBOOT-VI
+name: 798x-UBOOT-VIK
 
 on:
   #自动编译：每周一早上6点
