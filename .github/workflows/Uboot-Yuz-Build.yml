@@ -7,7 +7,7 @@
 # This file is part of the project bl-mt798x-dhcpd
 # You may not use, copy, modify or distribute this file except in compliance with the license agreement.
 #
-name: Yuz-789x-UBOOT
+name: 789x-Yuz-UBOOT
 
 on:
   repository_dispatch:
