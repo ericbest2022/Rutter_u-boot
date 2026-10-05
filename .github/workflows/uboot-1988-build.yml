@@ -1,4 +1,4 @@
-name: 1988-798x-UBOOT
+name: 798x-1988-UBOOT
 
 on:
   workflow_dispatch:
